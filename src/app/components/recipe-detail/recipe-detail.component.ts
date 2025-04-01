@@ -1,11 +1,18 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-detail',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './recipe-detail.component.html',
-  styleUrl: './recipe-detail.component.css'
+  styleUrls: ['./recipe-detail.component.scss']
 })
 export class RecipeDetailComponent {
+  recipeId: number | null = null;
 
+  constructor(private route: ActivatedRoute) {
+    this.recipeId = Number(this.route.snapshot.paramMap.get('id'));
+  }
 }

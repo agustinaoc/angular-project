@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-list',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './recipe-list.component.html',
-  styleUrl: './recipe-list.component.css'
+  styleUrls: ['./recipe-list.component.scss']
 })
 export class RecipeListComponent {
-
+  recipes = [
+    { id: 1, name: 'Pizza', description: 'Delicious cheesy pizza' },
+    { id: 2, name: 'Pasta', description: 'Creamy and spicy pasta' }
+  ];
 }
