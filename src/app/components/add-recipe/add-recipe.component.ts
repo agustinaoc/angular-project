@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './add-recipe.component.html',
-  styleUrls: ['./add-recipe.component.scss']
+  styleUrls: ['./add-recipe.component.css']
 })
 export class AddRecipeComponent {
   recipe = { name: '', description: '' };
