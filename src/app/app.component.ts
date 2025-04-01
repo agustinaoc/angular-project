@@ -1,12 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  standalone: true,
+  imports: [CommonModule, RouterModule],
+  template: `
+    <h1>Recipe Book</h1>
+    <nav>
+      <a routerLink="/">Home</a> | 
+      <a routerLink="/add">Add Recipe</a>
+    </nav>
+    <router-outlet></router-outlet>
+  `,
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'recipe-book';
-}
+export class AppComponent {}
